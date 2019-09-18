@@ -3,6 +3,7 @@
 class ofaa{
     public function __construct(){
         $this->autoloader();
+        $this->DB_configuration();
     }
 
     public function autoloader(){
@@ -15,6 +16,15 @@ class ofaa{
                 die("The file [{$class}] no exists.");
             }
         });
+    }
+
+    public function DB_configuration(){
+        define('DATABASE', [
+            'charset' => 'utf8',
+            'dbname' => 'test',
+            'username' => 'root',
+            'password' => ''
+        ]);
     }
 }
 
