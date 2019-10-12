@@ -1,0 +1,25 @@
+{
+    "name": "ofaaoficial/php-framework",
+    "description": "This project contains a simple architecture of Models, Views and Controllers is developing by student Oscar Amado.  The idea is create a mini-framework of developing for PHP including good practices of developing only using native PHP.",
+    "type": "Project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ofaaoficial",
+            "email": "oscarfamado@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [
+            "ofaa/Paths.php",
+            "ofaa/Kernel/Helpers.php",
+            "database.php",
+            "app/routes.php"
+        ],
+        "psr-4": {
+            "app\\" : "app/",
+            "ofaa\\" : "ofaa/"
+        }
+    }
+}
