@@ -9,11 +9,11 @@ class Model extends Database{
     protected $attributes;
 
     public function __construct($attributes = []){
-//        foreach ($attributes as $key => $value){
-//            $this->$key = $value;
-//        }
-
         $this->attributes = $attributes;
+    }
+
+    public function __set($attribute, $value){
+        $this->attributes[$attribute] = $value;
     }
 
     /**
@@ -21,6 +21,11 @@ class Model extends Database{
      * @description Sirve para ver las propiedades que se estan intentado acceder. Metodo magico.
      */
     public function __get($name){
-        return $name;
+        return $this->getAttribute($name);
+    }
+
+    public function getAttribute($attribute){
+        if(key_exists($attribute, $this->attributes)) return $this->attributes[$attribute];
+        die('Key no exists.');
     }
 }

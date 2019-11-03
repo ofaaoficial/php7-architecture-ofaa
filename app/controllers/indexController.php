@@ -4,18 +4,23 @@ namespace app\Controllers;
 
 use app\Models\User;
 
-class indexController extends User
+class indexController
 {
     public function index()
     {
         $user = new User();
 
-        debug(
-        $user->select('users')
-            ->where([
-                ['name', '=', 'Oscar']
-            ])
-            ->get());
+        $user->first_name = 'Oscar';
+
+
+        debug($user->first_name);
+
+//        debug(
+//        $user->select('users')
+//            ->where([
+//                ['name', '=', 'Oscar']
+//            ])
+//            ->get());
         render('index/index');
     }
 
